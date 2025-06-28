@@ -474,6 +474,6 @@ async function seedInitialData() {
 }
 
 // Call seed function after successful MongoDB connection
-mongoose.connection.on('connected', () => {
+/*mongoose.connection.on('connected', () => {
     seedInitialData();
-});
+});*/
