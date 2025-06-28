@@ -134,12 +134,17 @@ async function sendEmail(to, subject, htmlBody) {
 
 // Serve main application
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/dineflow-prototype.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 // Serve admin panel
 app.get('/admin', (req, res) => {
     res.sendFile(__dirname + '/public/admin.html');
+});
+
+// Serve test page
+app.get('/test', (req, res) => {
+    res.sendFile(__dirname + '/public/test.html');
 });
 
 // GET /api/restaurants - Get all restaurants
