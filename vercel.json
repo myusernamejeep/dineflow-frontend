@@ -6,15 +6,7 @@
       "use": "@vercel/node"
     }
   ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/test",
-      "dest": "/test.html"
-    },
+  "routes": [ 
     {
       "src": "/payment-success",
       "dest": "/public/payment-success.html"
