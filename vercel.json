@@ -8,12 +8,16 @@
   ],
   "routes": [
     {
-      "src": "/test",
-      "dest": "/public/test.html"
-    },
-    {
       "src": "/api/(.*)",
       "dest": "/server.js"
+    },
+    {
+      "src": "/test",
+      "dest": "/test.html"
+    },
+    {
+      "src": "/payment-success",
+      "dest": "/public/payment-success.html"
     },
     {
       "src": "/admin",

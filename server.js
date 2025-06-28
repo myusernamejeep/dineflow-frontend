@@ -143,8 +143,12 @@ app.get('/admin', (req, res) => {
 });
 
 // Serve test page
+app.get('/payment-success', (req, res) => {
+    res.sendFile(__dirname + '/public/payment-success.html');
+});
+// Serve test page
 app.get('/test', (req, res) => {
-    res.sendFile(__dirname + '/public/test.html');
+    res.sendFile(__dirname + '/test.html');
 });
 
 // GET /api/restaurants - Get all restaurants
@@ -306,7 +310,7 @@ app.post('/api/payments/process', async (req, res) => {
             payment_method: paymentMethodId,
             confirmation_method: 'manual', // Requires explicit confirmation
             confirm: true, // Confirm the payment intent immediately
-            return_url: 'https://your-frontend-domain.com/payment-success', // Optional: for 3D Secure redirects
+            return_url: process.env.FRONTEND_DOMAIN + '/payment-success', // Optional: for 3D Secure redirects
             metadata: {
                 bookingId: booking._id.toString(),
                 restaurantId: booking.restaurantId._id.toString(),
